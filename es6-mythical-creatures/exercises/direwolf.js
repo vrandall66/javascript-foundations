@@ -1,0 +1,25 @@
+class Direwolf {
+  constructor(name, home, size) {
+    this.name = name;
+    this.home = home || 'Beyond the Wall'
+    this.size = size || 'Massive';
+    this.starksToProtect = [];
+    this.huntsWhiteWalkers = true;
+  }
+
+  protect(stark) {
+    stark.safe = true;
+    this.huntsWhiteWalkers = false;
+    this.home === stark.location 
+    && this.starksToProtect.length < 2 
+    && this.starksToProtect.push(stark);
+  }
+
+  leave(stark) {
+    const starkIndex = this.starksToProtect.findIndex(el => el.name === stark.name);
+    this.starksToProtect[starkIndex].safe = false;
+    this.starksToProtect.splice(starkIndex, 1);
+  }
+}
+
+module.exports = Direwolf;
