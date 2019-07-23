@@ -10,13 +10,9 @@ class Werewolf {
 		this.human = !this.human;
 		this.wolf = !this.wolf;
 		this.hungry = !this.hungry;
-		// if (this.hungry === true) {
-		// 	eat();
-		// }
 	}
 	eat(victim) {
-		if ((this.hungry === true) &&
-		(this.human === false)) {
+		if (this.hungry && this.wolf) {
 		victim.alive = false;
 		this.change();
 		}
